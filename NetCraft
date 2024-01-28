@@ -1,0 +1,11 @@
+More websites may be exposed to attack following a Ukrainian security researcher’s discovery of a cross-site scripting vulnerability in a widespread Flash application. This week, the researcher announced two more content management systems which use insecure versions of the affected Flash file.
+
+Earlier this year, the author also claimed to have found a similar vulnerability in Flash files used by tag cloud plugins for WordPress, Joomulus, JVClouds3D, Joomla and Blogumus.
+
+Eugene Dokukin, posting as MustLive, noted this week that the same problem also affects the Cumulus tag cloud widget for BlogEngine.NET and Kasseler CMS.
+
+The vulnerability allows arbitrary HTML tags to be injected into the tagcloud.swf Flash application. This makes it possible to inject malign JavaScript into the Flash application, although this can only be executed if a victim clicks on the injected content:
+
+If an attacker is able to convince someone to click on the Flash application, the injected JavaScript would be able to run in the context of the site hosting the Flash application. This could be particularly harmful for content management systems, potentially allowing an attacker to launch cross-site request forgery attacks, or even propagate XSS worms through comments or blog posts.
+
+A simple Google search returns many websites which use vulnerable versions of the Flash tag cloud application. Netcraft provides a range of security testing services to identify and eliminate vulnerabilities such as cross-site scripting.
