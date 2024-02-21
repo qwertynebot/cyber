@@ -1,0 +1,18 @@
+Install EvilDroid
+Step 1: 1st Download Script folder with below command
+  git clone https://github.com/M4sc3r4n0/Evil-Droid.git
+  
+  Step 2: Enter the script directory
+cd Evil-Droid
+
+Step 3: then execute all files into this folder
+  chmod +x *
+
+  *** Important ***
+This Framework need ROOT Permission with below command
+  sudo su
+
+  Step 4: Run evil-droid framework
+  ./evil-droid
+
+  
