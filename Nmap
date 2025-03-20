@@ -1,60 +1,100 @@
-Nmap (Network Mapper) є відкритим інструментом для аналізу мережі та сканування портів. Він дозволяє користувачам визначати, які комп'ютери та служби працюють в мережі, визначати відкриті порти, ідентифікувати версії служб, а також виявляти потенційні безпекові загрози. Ось кілька важливих аспектів nmap:
+# Nmap (Network Mapper)  
 
-Основні функції:
+Nmap (Network Mapper) is an open-source tool for network analysis and port scanning. It allows users to identify active devices and services within a network, detect open ports, determine service versions, and uncover potential security threats.  
 
-Сканування портів:
-nmap дозволяє визначити, які порти відкриті чи закриті на цільовому сервері чи комп'ютері.
+## Key Features  
+
+### **Port Scanning**  
+Nmap helps identify which ports are open or closed on a target system.  
+```bash
 nmap target.com
+```  
 
-Визначення версій служб:
-Здатен ідентифікувати версії служб, які працюють на відкритих портах.
+### **Service Version Detection**  
+Nmap can identify the versions of services running on open ports.  
+```bash
 nmap -sV target.com
+```  
 
-OS Detection (Визначення операційної системи):
-Може намагатися визначити операційну систему, яка працює на цільовому хості.
+### **OS Detection**  
+It attempts to determine the operating system of a target host.  
+```bash
 nmap -O target.com
+```  
 
-Scriptable (Скриптовані сканування):
-Здатен використовувати скрипти для розширення функціоналу та виявлення певних вразливостей.
+### **Scriptable Scanning**  
+Nmap supports scripts to extend its functionality and detect specific vulnerabilities.  
+```bash
 nmap --script script_name target.com
-Додаткові опції:
+```  
 
-Aggressive Scan (Агресивне сканування):
-Використовується для більш інтенсивного сканування.
+## **Additional Options**  
+
+### **Aggressive Scan**  
+Performs a more detailed and intensive scan.  
+```bash
 nmap -A target.com
+```  
 
-UDP Scanning (UDP сканування):
-Визначає відкриті UDP порти.
+### **UDP Scanning**  
+Detects open UDP ports.  
+```bash
 nmap -sU target.com
+```  
 
-Ping Scan (Ping сканування):
-Використовується для визначення активних хостів.
+### **Ping Scan**  
+Identifies active hosts without scanning ports.  
+```bash
 nmap -sn target.com
+```  
 
-Приклад використання:
+## **Advanced Usage**  
 
-# Базове сканування портів
-nmap target.com
+### **Scanning Multiple Targets**  
+Nmap allows scanning multiple hosts at once:  
+```bash
+nmap 192.168.1.1 192.168.1.2 192.168.1.3  
+nmap 192.168.1.1-100  
+nmap 192.168.1.*  
+```  
 
-# Визначення версій служб
-nmap -sV target.com
+### **Evading Firewalls & IDS**  
+Some techniques help bypass firewalls and intrusion detection systems:  
+```bash
+nmap -f target.com  # Fragment packets  
+nmap --data-length 50 target.com  # Add random payloads  
+nmap --mtu 32 target.com  # Use a custom MTU  
+```  
 
-# Визначення операційної системи
-nmap -O target.com
+### **Saving Scan Results**  
+You can save scan results in different formats for further analysis:  
+```bash
+nmap -oN output.txt target.com  # Normal format  
+nmap -oX output.xml target.com  # XML format  
+nmap -oG output.gnmap target.com  # Grepable format  
+```  
 
-# Скриптоване сканування
-nmap --script script_name target.com
+## **Example Usage**  
 
-# Агресивне сканування
-nmap -A target.com
-Зауваження:
+```bash
+# Basic port scan
+nmap target.com  
 
-Використання nmap для сканування мережі, до якої ви не маєте дозволу, може порушувати законодавство. Завжди впевнюйтеся, що ви маєте право та дозвіл на використання цього інструменту.
+# Detect service versions
+nmap -sV target.com  
 
-Важливо враховувати, що деякі веб-сайти та системи можуть блокувати або реагувати на сканування, тому необхідно використовувати nmap з обережністю та дотримуватися етичних стандартів.
+# Detect the operating system
+nmap -O target.com  
 
+# Run a script-based scan
+nmap --script script_name target.com  
 
+# Aggressive scanning
+nmap -A target.com  
+```  
 
+## **Legal and Ethical Considerations**  
 
+Using Nmap to scan networks without proper authorization may violate laws and regulations. Always ensure you have permission before scanning any system.  
 
-
+Additionally, some websites and servers may block or react to scanning attempts, so always use Nmap responsibly and follow ethical guidelines.  
